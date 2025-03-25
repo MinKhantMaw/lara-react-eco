@@ -37,4 +37,14 @@ class Product extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class);
     }
+
+    /**
+     * Get all of the variationTypes for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function variationTypes()
+    {
+        return $this->hasMany(VariationType::class);
+    }
 }

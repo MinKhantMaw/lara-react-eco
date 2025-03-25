@@ -7,6 +7,7 @@ use App\Enums\RolesEnum;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\Pages\EditProduct;
 use App\Filament\Resources\ProductResource\Pages\ProductImage;
+use App\Filament\Resources\ProductResource\Pages\ProductVariationType;
 use App\Models\Product;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\Grid;
@@ -139,6 +140,7 @@ class ProductResource extends Resource
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
             'images' => Pages\ProductImage::route('/{record}/images'),
+            'variation-type' => Pages\ProductVariationType::route('/{record}/variation-type'),
         ];
     }
 
@@ -148,6 +150,7 @@ class ProductResource extends Resource
             $page->generateNavigationItems([
                 EditProduct::class,
                 ProductImage::class,
+                ProductVariationType::class,
             ]);
 
     }
